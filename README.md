@@ -5,7 +5,7 @@
 <br />
 
 <a href="https://github.com/Tokyo-Jhx">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=7AA2F7&center=true&vCenter=true&width=640&lines=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF!%20Soy%20Jhosep%20%F0%9F%91%8B;Desarrollador%20en%20formaci%C3%B3n%20%E2%80%94%20SENA%20ADSO;PHP%20%C2%B7%20Laravel%20%C2%B7%20C%23%20%C2%B7%20.NET;APIs%2C%20bots%20y%20apps...%20de%20noche%20%F0%9F%8C%99;Siempre%20aprendiendo%20algo%20nuevo%20%E2%9A%A1" alt="Animación de texto" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=7AA2F7&center=true&vCenter=true&width=640&lines=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF!%20Soy%20Jhosep%20%F0%9F%91%8B;Desarrollador%20en%20formaci%C3%B3n%20%E2%80%94%20SENA%20ADSO;Python%20%C2%B7%20C%23%20%C2%B7%20.NET%20%C2%B7%20HTML%20%C2%B7%20CSS;APIs%2C%20bots%20y%20apps...%20de%20noche%20%F0%9F%8C%99;Siempre%20aprendiendo%20algo%20nuevo%20%E2%9A%A1" alt="Animación de texto" />
 </a>
 
 <p>
@@ -24,8 +24,8 @@ Soy **Jhosep**, alias **TokyoDev**. Estudio Análisis y Desarrollo de Software e
 const tokyoDev = {
   nombre:     "Jhosep S.",
   alias:      ["TokyoDev", "Jhx"],
-  estudio:    "Tecnólogo en ADSO @ SENA 🇨🇴",
-  stack:      ["PHP", "Laravel", "C#", ".NET", "MySQL"],
+  estudio:    "Tecnólogo en ADSO @ SENA (Colombia)",
+  stack:      ["Python", "C#", ".NET", "HTML", "CSS", "MySQL"],
   explorando: ["Flutter", "Blazor", "bots de Discord"],
   meta:       "Ingeniería en 2027 🎯",
   horario:    "mejor de noche 🌙",
@@ -38,7 +38,7 @@ const tokyoDev = {
 
 **Lo que uso**
 
-<img src="https://skillicons.dev/icons?i=php,laravel,mysql,cs,dotnet,html,css,js&theme=dark" alt="PHP, Laravel, MySQL, C#, .NET, HTML, CSS, JavaScript" />
+<img src="https://skillicons.dev/icons?i=py,html,css,js,cs,dotnet,mysql&theme=dark" alt="Python, HTML, CSS, JavaScript, C#, .NET, MySQL" />
 
 **Lo que estoy aprendiendo y mis herramientas**
 
