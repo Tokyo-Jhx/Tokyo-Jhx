@@ -188,7 +188,7 @@
     </g>
     <g filter="url(#soft)">
       <rect x="942" y="240" width="40" height="16" rx="2" fill="#0f0f17" stroke="#7dcfff" stroke-width="1.2"/>
-      <text x="962" y="252" text-anchor="middle" font-size="10.5" font-weight="700" class="jp" fill="#7dcfff">コード</text>
+      <text x="962" y="252.5" text-anchor="middle" font-size="12" font-weight="800" class="sans" fill="#7dcfff">C#</text>
     </g>
 
     <!-- horizonte y cuadrícula -->
@@ -222,6 +222,6 @@
     <text x="62" y="84" font-size="15" letter-spacing="4" fill="#565f89" class="mono"><tspan class="jp">ようこそ</tspan>  //  WELCOME</text>
     <text x="56" y="172" font-size="104" font-weight="800" letter-spacing="-3" fill="url(#title)" class="sans" filter="url(#glow)">TokyoDev</text>
     <text x="62" y="214" font-size="25" class="jp" fill="#bb9af7">東京開発者<tspan class="sans" fill="#565f89"> · </tspan><tspan class="sans" fill="#c0caf5" font-weight="600">Jhosep S.</tspan></text>
-    <text x="62" y="246" font-size="16" class="mono" fill="#7dcfff"><tspan fill="#9ece6a">$</tspan> python tokyo.py --modo=nocturno<tspan class="blink" fill="#c0caf5">▌</tspan></text>
+    <text x="62" y="246" font-size="16" class="mono" fill="#7dcfff"><tspan fill="#9ece6a">$</tspan> dotnet run --modo=nocturno<tspan class="blink" fill="#c0caf5">▌</tspan></text>
   </g>
 </svg>
