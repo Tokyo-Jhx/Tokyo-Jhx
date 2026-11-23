@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="ありがとう · Gracias por pasar · またね">
+  <defs>
+    <clipPath id="frame"><rect width="1200" height="150" rx="18"/></clipPath>
+    <clipPath id="groundClip"><rect y="104" width="1200" height="46"/></clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0b12"/>
+      <stop offset=".6" stop-color="#1a1b26"/>
+      <stop offset="1" stop-color="#2d1f45"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b1030"/>
+      <stop offset="1" stop-color="#0b0b12"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7dcfff"/>
+      <stop offset=".45" stop-color="#bb9af7"/>
+      <stop offset="1" stop-color="#ff007c"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .s{fill:#c0caf5;animation:tw 4s ease-in-out infinite}
+    @keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+    .mono{font-family:'Cascadia Code','JetBrains Mono',Consolas,'SF Mono',Menlo,monospace}
+    .jp{font-family:'Yu Gothic UI','Yu Gothic',Meiryo,'Hiragino Sans','Noto Sans JP','Segoe UI',sans-serif}
+  </style>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="104" fill="url(#sky)"/>
+    <rect y="104" width="1200" height="46" fill="url(#ground)"/>
+
+    <circle class="s" cx="90" cy="26" r="1.1" style="animation-delay:-.5s"/>
+    <circle class="s" cx="230" cy="70" r=".9" style="animation-delay:-2.2s"/>
+    <circle class="s" cx="1000" cy="30" r="1.2" style="animation-delay:-1.3s"/>
+    <circle class="s" cx="1120" cy="72" r=".9" style="animation-delay:-3.1s"/>
+    <circle class="s" cx="860" cy="16" r="1" style="animation-delay:-2.7s"/>
+    <circle class="s" cx="330" cy="18" r="1" style="animation-delay:-1.8s"/>
+
+    <line x1="0" y1="104" x2="1200" y2="104" stroke="#ff007c" stroke-width="1.5" opacity=".9" filter="url(#glow)"/>
+    <g clip-path="url(#groundClip)" stroke="#bb9af7" stroke-width="1" opacity=".4">
+      <path d="M600 104 L-600 150 M600 104 L-360 150 M600 104 L-120 150 M600 104 L120 150 M600 104 L360 150 M600 104 L600 150 M600 104 L840 150 M600 104 L1080 150 M600 104 L1320 150 M600 104 L1560 150 M600 104 L1800 150"/>
+      <line x1="0" x2="1200" y1="104" y2="104">
+        <animate attributeName="y1" values="104;150" dur="3s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
+        <animate attributeName="y2" values="104;150" dur="3s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
+      </line>
+      <line x1="0" x2="1200" y1="104" y2="104">
+        <animate attributeName="y1" values="104;150" dur="3s" begin="-1s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
+        <animate attributeName="y2" values="104;150" dur="3s" begin="-1s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
+      </line>
+      <line x1="0" x2="1200" y1="104" y2="104">
+        <animate attributeName="y1" values="104;150" dur="3s" begin="-2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
+        <animate attributeName="y2" values="104;150" dur="3s" begin="-2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
+      </line>
+    </g>
+
+    <text x="600" y="56" text-anchor="middle" font-size="30" font-weight="700" class="jp" fill="url(#title)" filter="url(#glow)">ありがとう · Gracias por pasar · またね</text>
+    <text x="600" y="84" text-anchor="middle" font-size="13" letter-spacing="3" class="mono" fill="#565f89">TOKYODEV — <tspan class="jp">東京開発者</tspan> — 2026</text>
+  </g>
+</svg>
