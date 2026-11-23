@@ -81,9 +81,9 @@ Un chat propio para usar Claude Code en tu PC o en una memoria USB. Hecho en **C
 
 <div align="center">
 
-| Instalador | Tipo de instalación |
+| Instalador | Ventana principal |
 |:---:|:---:|
-| <img src="https://raw.githubusercontent.com/Tokyo-Jhx/JHXCORE/main/imagenes/instalador-bienvenida.png" width="380" alt="Bienvenida del instalador" /> | <img src="https://raw.githubusercontent.com/Tokyo-Jhx/JHXCORE/main/imagenes/instalador-tipo-usb.png" width="380" alt="Instalación en USB" /> |
+| <img src="https://raw.githubusercontent.com/Tokyo-Jhx/JHXCORE/main/imagenes/instalador-bienvenida.png" width="380" alt="Bienvenida del instalador" /> | <img src="https://raw.githubusercontent.com/Tokyo-Jhx/JHXCORE/main/imagenes/app-principal.png" width="250" alt="Ventana principal de JHX//CORE" /> |
 
 <a href="https://github.com/Tokyo-Jhx/JHXCORE/releases/latest">
   <img src="https://img.shields.io/badge/%E2%AC%87_Descargar-%C3%BAltima_versi%C3%B3n-ff007c?style=for-the-badge&labelColor=1a1b26" alt="Descargar la última versión" />
