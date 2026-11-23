@@ -1,61 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="1200" height="150" role="img" aria-label="ありがとう · Gracias por pasar · またね">
   <defs>
     <clipPath id="frame"><rect width="1200" height="150" rx="18"/></clipPath>
-    <clipPath id="groundClip"><rect y="104" width="1200" height="46"/></clipPath>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0b0b12"/>
-      <stop offset=".6" stop-color="#1a1b26"/>
-      <stop offset="1" stop-color="#2d1f45"/>
+      <stop offset="0" stop-color="#05060d"/>
+      <stop offset=".55" stop-color="#15143a"/>
+      <stop offset="1" stop-color="#4a2556"/>
     </linearGradient>
-    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1b1030"/>
-      <stop offset="1" stop-color="#0b0b12"/>
+    <radialGradient id="glowH" cx="600" cy="112" r="560" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 112) scale(1 .18) translate(0 -112)">
+      <stop offset="0" stop-color="#ff6b8b" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ff6b8b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#120f26"/>
+      <stop offset="1" stop-color="#04050a"/>
     </linearGradient>
+    <linearGradient id="fadeGrad" x1="0" y1="112" x2="0" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="reflFade" maskUnits="userSpaceOnUse" x="0" y="112" width="1200" height="38">
+      <rect y="112" width="1200" height="38" fill="url(#fadeGrad)"/>
+    </mask>
     <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#7dcfff"/>
       <stop offset=".45" stop-color="#bb9af7"/>
       <stop offset="1" stop-color="#ff007c"/>
     </linearGradient>
     <filter id="glow" x="-20%" y="-60%" width="140%" height="220%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ripple" filterUnits="userSpaceOnUse" x="0" y="112" width="1200" height="38">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006 0.16" numOctaves="2" seed="7" result="n">
+        <animate attributeName="baseFrequency" dur="9s" values="0.006 0.16;0.008 0.2;0.006 0.16" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="0.6 1.4"/>
     </filter>
   </defs>
   <style>
-    .s{fill:#c0caf5;animation:tw 4s ease-in-out infinite}
-    @keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+    .tw{fill:#dfe6ff;animation:tw 4s ease-in-out infinite}
+    @keyframes tw{0%,100%{opacity:.15}50%{opacity:.95}}
     .mono{font-family:'Cascadia Code','JetBrains Mono',Consolas,'SF Mono',Menlo,monospace}
     .jp{font-family:'Yu Gothic UI','Yu Gothic',Meiryo,'Hiragino Sans','Noto Sans JP','Segoe UI',sans-serif}
   </style>
   <g clip-path="url(#frame)">
-    <rect width="1200" height="104" fill="url(#sky)"/>
-    <rect y="104" width="1200" height="46" fill="url(#ground)"/>
-
-    <circle class="s" cx="90" cy="26" r="1.1" style="animation-delay:-.5s"/>
-    <circle class="s" cx="230" cy="70" r=".9" style="animation-delay:-2.2s"/>
-    <circle class="s" cx="1000" cy="30" r="1.2" style="animation-delay:-1.3s"/>
-    <circle class="s" cx="1120" cy="72" r=".9" style="animation-delay:-3.1s"/>
-    <circle class="s" cx="860" cy="16" r="1" style="animation-delay:-2.7s"/>
-    <circle class="s" cx="330" cy="18" r="1" style="animation-delay:-1.8s"/>
-
-    <line x1="0" y1="104" x2="1200" y2="104" stroke="#ff007c" stroke-width="1.5" opacity=".9" filter="url(#glow)"/>
-    <g clip-path="url(#groundClip)" stroke="#bb9af7" stroke-width="1" opacity=".4">
-      <path d="M600 104 L-600 150 M600 104 L-360 150 M600 104 L-120 150 M600 104 L120 150 M600 104 L360 150 M600 104 L600 150 M600 104 L840 150 M600 104 L1080 150 M600 104 L1320 150 M600 104 L1560 150 M600 104 L1800 150"/>
-      <line x1="0" x2="1200" y1="104" y2="104">
-        <animate attributeName="y1" values="104;150" dur="3s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
-        <animate attributeName="y2" values="104;150" dur="3s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
-      </line>
-      <line x1="0" x2="1200" y1="104" y2="104">
-        <animate attributeName="y1" values="104;150" dur="3s" begin="-1s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
-        <animate attributeName="y2" values="104;150" dur="3s" begin="-1s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
-      </line>
-      <line x1="0" x2="1200" y1="104" y2="104">
-        <animate attributeName="y1" values="104;150" dur="3s" begin="-2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
-        <animate attributeName="y2" values="104;150" dur="3s" begin="-2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".6 0 1 1"/>
-      </line>
+    <rect width="1200" height="112" fill="url(#sky)"/>
+    <g fill="#dfe6ff"><circle cx="426.87" cy="23.96" r="0.4" opacity="0.56"/><circle cx="361.41" cy="64.24" r="0.36" opacity="0.66"/><circle class="tw" cx="158.82" cy="67.87" r="0.79" style="animation-delay:-4.51s"/><circle cx="560.79" cy="78.56" r="0.92" opacity="0.72"/><circle cx="948.31" cy="44.17" r="0.54" opacity="0.59"/><circle class="tw" cx="142.31" cy="48.6" r="0.48" style="animation-delay:-2.08s"/><circle cx="47.08" cy="59.83" r="0.36" opacity="0.29"/><circle cx="79.47" cy="16.1" r="0.89" opacity="0.51"/><circle cx="255.07" cy="45.48" r="0.43" opacity="0.25"/><circle cx="868.32" cy="26.39" r="0.53" opacity="0.78"/><circle cx="1.26" cy="72.09" r="0.3" opacity="0.47"/><circle cx="992.56" cy="67.47" r="0.65" opacity="0.49"/><circle cx="857.17" cy="41.87" r="0.77" opacity="0.63"/><circle class="tw" cx="477.28" cy="41.38" r="0.68" style="animation-delay:-4.18s"/><circle cx="369.65" cy="12.28" r="0.56" opacity="0.6"/><circle class="tw" cx="293.35" cy="77" r="0.57" style="animation-delay:-4.63s"/><circle cx="988.77" cy="7.51" r="0.41" opacity="0.45"/><circle cx="172.05" cy="22" r="0.75" opacity="0.4"/><circle cx="277.29" cy="55.28" r="0.55" opacity="0.68"/><circle cx="857.11" cy="11.05" r="0.63" opacity="0.62"/><circle class="tw" cx="278.18" cy="25.84" r="0.74" style="animation-delay:-3.28s"/><circle class="tw" cx="1070.58" cy="11.71" r="0.64" style="animation-delay:-1.03s"/><circle class="tw" cx="1039.9" cy="49.22" r="0.8" style="animation-delay:-3.29s"/><circle class="tw" cx="801.81" cy="44.4" r="0.58" style="animation-delay:-2.88s"/><circle cx="193.07" cy="14.91" r="0.35" opacity="0.56"/><circle cx="759.95" cy="60.03" r="0.7" opacity="0.77"/><circle cx="182.1" cy="8.73" r="0.69" opacity="0.62"/><circle cx="643.87" cy="73.22" r="0.65" opacity="0.51"/><circle class="tw" cx="50.34" cy="12.39" r="0.7" style="animation-delay:-2.31s"/><circle cx="763.33" cy="37.08" r="0.79" opacity="0.28"/><circle cx="219.28" cy="64.62" r="0.92" opacity="0.52"/><circle class="tw" cx="105.91" cy="73.66" r="1.02" style="animation-delay:-0.11s"/><circle cx="185.92" cy="54.31" r="0.58" opacity="0.23"/><circle cx="965.26" cy="66.49" r="0.92" opacity="0.27"/><circle cx="908.88" cy="8.33" r="0.81" opacity="0.52"/><circle cx="60.65" cy="14.35" r="0.73" opacity="0.78"/><circle cx="237.6" cy="75.5" r="0.61" opacity="0.66"/><circle cx="424.89" cy="35.77" r="0.31" opacity="0.56"/><circle cx="743.98" cy="68.8" r="0.64" opacity="0.42"/><circle cx="455.98" cy="46.18" r="0.56" opacity="0.59"/></g>
+    <rect width="1200" height="112" fill="url(#glowH)"/>
+    <g id="city">
+      <path fill="#13122a" d="M-3.57 84h25.58V112h-25.58zM24.75 91h16.09V112h-16.09zM41.57 93h19.26V112h-19.26zM61.82 96h24.39V112h-24.39zM88.79 97h15.67V112h-15.67zM104.87 85h20.44V112h-20.44zM126.41 86h17.32V112h-17.32zM146.54 91h14.98V112h-14.98zM163.83 87h11.2V112h-11.2zM176.63 88h14.63V112h-14.63zM191.44 97h17.88V112h-17.88zM210.22 89h16.55V112h-16.55zM229.02 98h23.86V112h-23.86zM253.38 97h12.54V112h-12.54zM268.79 87h15.94V112h-15.94zM285.27 92h27.8V112h-27.8zM314.08 107h12.67V112h-12.67zM328.47 106h20.96V112h-20.96zM351.58 106h16.44V112h-16.44zM369.27 108h25.3V112h-25.3zM396.07 106h24.82V112h-24.82zM422.92 108h23.53V112h-23.53zM448.24 107h20.22V112h-20.22zM469.64 107h17.97V112h-17.97zM490.48 108h23.48V112h-23.48zM514.38 106h26.98V112h-26.98zM542.14 108h20.51V112h-20.51zM563.76 108h24V112h-24zM590.21 106h15.92V112h-15.92zM607.72 109h26.85V112h-26.85zM635.25 108h15.81V112h-15.81zM651.79 108h11.33V112h-11.33zM665.36 108h21.31V112h-21.31zM689.15 107h24.5V112h-24.5zM716.26 107h26.95V112h-26.95zM743.66 106h21.12V112h-21.12zM766.15 108h20.42V112h-20.42zM786.93 108h12.75V112h-12.75zM802.25 109h12.37V112h-12.37zM815.82 108h25.5V112h-25.5zM842.59 107h11.22V112h-11.22zM854.95 109h13.01V112h-13.01zM868.7 107h22.82V112h-22.82zM894.48 95h17.06V112h-17.06zM911.86 97h13.06V112h-13.06zM927.24 86h20.53V112h-20.53zM949.57 89h13.07V112h-13.07zM964.38 85h18.13V112h-18.13zM984.17 96h26.86V112h-26.86zM1011.48 91h23.6V112h-23.6zM1037.91 95h12.86V112h-12.86zM1051.07 94h14.99V112h-14.99zM1068.09 86h21.18V112h-21.18zM1091.24 87h21.17V112h-21.17zM1114.27 96h19.12V112h-19.12zM1134.47 91h16.9V112h-16.9zM1151.7 95h27.81V112h-27.81zM1180.5 99h27.65V112h-27.65z"/>
+      <path fill="#b4dcff" opacity=".85" d="M12.93 95h1.4v1.8h-1.4zM12.93 103h1.4v1.8h-1.4zM37.75 98h1.4v1.8h-1.4zM47.57 96h1.4v1.8h-1.4zM67.82 107h1.4v1.8h-1.4zM98.29 108h1.4v1.8h-1.4zM117.87 100h1.4v1.8h-1.4zM255.88 100h1.4v1.8h-1.4zM259.38 100h1.4v1.8h-1.4zM259.38 104h1.4v1.8h-1.4zM278.29 106h1.4v1.8h-1.4zM294.77 99h1.4v1.8h-1.4zM933.24 93h1.4v1.8h-1.4zM936.74 93h1.4v1.8h-1.4zM940.24 93h1.4v1.8h-1.4zM936.74 101h1.4v1.8h-1.4zM966.88 88h1.4v1.8h-1.4zM997.17 107h1.4v1.8h-1.4zM1007.67 107h1.4v1.8h-1.4zM1027.98 94h1.4v1.8h-1.4zM1040.41 106h1.4v1.8h-1.4zM1057.07 101h1.4v1.8h-1.4zM1104.24 94h1.4v1.8h-1.4zM1147.47 102h1.4v1.8h-1.4zM1136.97 106h1.4v1.8h-1.4zM1171.7 102h1.4v1.8h-1.4z"/><path fill="#e0af68" opacity=".85" d="M5.93 99h1.4v1.8h-1.4zM5.93 103h1.4v1.8h-1.4zM5.93 107h1.4v1.8h-1.4zM30.75 102h1.4v1.8h-1.4zM34.25 106h1.4v1.8h-1.4zM81.82 107h1.4v1.8h-1.4zM94.79 100h1.4v1.8h-1.4zM91.29 104h1.4v1.8h-1.4zM107.37 88h1.4v1.8h-1.4zM110.87 88h1.4v1.8h-1.4zM117.87 96h1.4v1.8h-1.4zM135.91 101h1.4v1.8h-1.4zM139.41 101h1.4v1.8h-1.4zM152.54 98h1.4v1.8h-1.4zM169.83 90h1.4v1.8h-1.4zM182.63 91h1.4v1.8h-1.4zM186.13 107h1.4v1.8h-1.4zM223.22 92h1.4v1.8h-1.4zM235.02 101h1.4v1.8h-1.4zM238.52 105h1.4v1.8h-1.4zM271.29 90h1.4v1.8h-1.4zM940.24 97h1.4v1.8h-1.4zM936.74 105h1.4v1.8h-1.4zM977.38 96h1.4v1.8h-1.4zM1031.48 94h1.4v1.8h-1.4zM1031.48 98h1.4v1.8h-1.4zM1060.57 105h1.4v1.8h-1.4zM1077.59 93h1.4v1.8h-1.4zM1070.59 101h1.4v1.8h-1.4zM1093.74 90h1.4v1.8h-1.4zM1097.24 106h1.4v1.8h-1.4zM1123.77 99h1.4v1.8h-1.4zM1127.27 107h1.4v1.8h-1.4z"/><path fill="#ffd38a" opacity=".85" d="M5.93 87h1.4v1.8h-1.4zM9.43 87h1.4v1.8h-1.4zM2.43 99h1.4v1.8h-1.4zM-1.07 103h1.4v1.8h-1.4zM2.43 103h1.4v1.8h-1.4zM9.43 107h1.4v1.8h-1.4zM30.75 94h1.4v1.8h-1.4zM34.25 94h1.4v1.8h-1.4zM30.75 98h1.4v1.8h-1.4zM34.25 98h1.4v1.8h-1.4zM30.75 106h1.4v1.8h-1.4zM44.07 96h1.4v1.8h-1.4zM44.07 108h1.4v1.8h-1.4zM47.57 108h1.4v1.8h-1.4zM91.29 100h1.4v1.8h-1.4zM94.79 104h1.4v1.8h-1.4zM117.87 88h1.4v1.8h-1.4zM121.37 92h1.4v1.8h-1.4zM107.37 104h1.4v1.8h-1.4zM107.37 108h1.4v1.8h-1.4zM135.91 89h1.4v1.8h-1.4zM152.54 102h1.4v1.8h-1.4zM149.04 106h1.4v1.8h-1.4zM166.33 102h1.4v1.8h-1.4zM182.63 107h1.4v1.8h-1.4zM212.72 96h1.4v1.8h-1.4zM216.22 104h1.4v1.8h-1.4zM231.52 101h1.4v1.8h-1.4zM255.88 108h1.4v1.8h-1.4zM274.79 98h1.4v1.8h-1.4zM274.79 106h1.4v1.8h-1.4zM298.27 107h1.4v1.8h-1.4zM900.48 106h1.4v1.8h-1.4zM921.36 108h1.4v1.8h-1.4zM933.24 89h1.4v1.8h-1.4zM936.74 89h1.4v1.8h-1.4zM943.74 97h1.4v1.8h-1.4zM943.74 101h1.4v1.8h-1.4zM933.24 105h1.4v1.8h-1.4zM959.07 100h1.4v1.8h-1.4zM973.88 92h1.4v1.8h-1.4zM977.38 100h1.4v1.8h-1.4zM977.38 108h1.4v1.8h-1.4zM993.67 99h1.4v1.8h-1.4zM990.17 103h1.4v1.8h-1.4zM993.67 103h1.4v1.8h-1.4zM990.17 107h1.4v1.8h-1.4zM1020.98 98h1.4v1.8h-1.4zM1024.48 102h1.4v1.8h-1.4zM1027.98 102h1.4v1.8h-1.4zM1020.98 106h1.4v1.8h-1.4zM1031.48 106h1.4v1.8h-1.4zM1081.09 89h1.4v1.8h-1.4zM1081.09 97h1.4v1.8h-1.4zM1107.74 98h1.4v1.8h-1.4zM1100.74 106h1.4v1.8h-1.4zM1116.77 99h1.4v1.8h-1.4zM1116.77 107h1.4v1.8h-1.4zM1147.47 94h1.4v1.8h-1.4zM1147.47 98h1.4v1.8h-1.4zM1154.2 98h1.4v1.8h-1.4zM1164.7 98h1.4v1.8h-1.4zM1168.2 98h1.4v1.8h-1.4zM1175.2 98h1.4v1.8h-1.4zM1164.7 102h1.4v1.8h-1.4zM1168.2 106h1.4v1.8h-1.4zM1190 102h1.4v1.8h-1.4zM1186.5 106h1.4v1.8h-1.4z"/>
     </g>
-
-    <text x="600" y="56" text-anchor="middle" font-size="30" font-weight="700" class="jp" fill="url(#title)" filter="url(#glow)">ありがとう · Gracias por pasar · またね</text>
-    <text x="600" y="84" text-anchor="middle" font-size="13" letter-spacing="3" class="mono" fill="#565f89">TOKYODEV — <tspan class="jp">東京開発者</tspan> — 2026</text>
+    <rect y="112" width="1200" height="38" fill="url(#water)"/>
+    <g mask="url(#reflFade)">
+      <g filter="url(#ripple)">
+        <g transform="matrix(1 0 0 -1 0 224)"><use href="#city"/></g>
+      </g>
+    </g>
+    <rect y="112" width="1200" height=".8" fill="#1d1a38"/>
+    <text x="600" y="50" text-anchor="middle" font-size="30" font-weight="700" class="jp" fill="url(#title)" filter="url(#glow)">ありがとう · Gracias por pasar · またね</text>
+    <text x="600" y="76" text-anchor="middle" font-size="13" letter-spacing="3" class="mono" fill="#6b74a8">TOKYODEV — <tspan class="jp">東京開発者</tspan> — 2026</text>
   </g>
 </svg>
